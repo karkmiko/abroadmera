@@ -1,26 +1,115 @@
 
-/* Minimal styles for demonstration */
 :root {
-  --bg: #ffffff;
-  --text: #111111;
-  --accent: #bb1919;
-  --bg-secondary: #f2f2f2;
-  --shadow: rgba(0, 0, 0, 0.1);
+  --bg: #fdfdfd;
+  --text: #1a1a1a;
+  --accent: #d62828;
+  --bg-secondary: #ffffffcc;
+  --shadow: 0 4px 12px rgba(0,0,0,0.1);
+  --quote-bg: #f0f0f0;
 }
 [data-theme="dark"] {
-  --bg: #1e1e1e;
+  --bg: #121212;
   --text: #e0e0e0;
   --accent: #ff4d4d;
-  --bg-secondary: #2a2a2a;
-  --shadow: rgba(255, 255, 255, 0.05);
+  --bg-secondary: #1e1e1e;
+  --shadow: 0 4px 12px rgba(255,255,255,0.05);
+  --quote-bg: #2b2b2b;
 }
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
+  background: linear-gradient(135deg, #ece9e6, #ffffff);
+  color: var(--text);
 }
-header, footer {
-  background-color: var(--bg-secondary);
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem 2rem;
+  background-color: var(--bg-secondary);
+  box-shadow: var(--shadow);
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--text);
+}
+.search-toggle {
+  display: flex;
+  gap: 0.5rem;
+}
+input#searchBar {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.quote-box {
+  background: var(--quote-bg);
+  margin: 1rem auto;
+  max-width: 700px;
+  padding: 1rem;
+  font-style: italic;
+  border-left: 5px solid var(--accent);
+}
+.articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+.article-card {
+  background-color: var(--bg-secondary);
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.article-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.article-content {
+  padding: 1rem;
+}
+.article-content h2 {
+  margin: 0.5rem 0;
+}
+.article-content p {
+  font-size: 0.95rem;
+}
+footer {
+  background: var(--bg-secondary);
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+.social-icons a {
+  margin: 0 0.5rem;
+  color: var(--text);
 }
